@@ -1,0 +1,17 @@
+# vim: set ft=sh:
+
+build()
+{
+    BINARIES=""
+    FILES=""
+    SCRIPT=""
+    syslinux-install_update -u
+    echo "Please ignore any warnings about an empty image"
+}
+
+help ()
+{
+cat<<HELPEOF
+  Runs syslinux.
+HELPEOF
+}

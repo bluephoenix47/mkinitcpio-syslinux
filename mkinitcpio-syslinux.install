@@ -1,0 +1,22 @@
+swap (){
+  t=`mktemp`
+  cat /$1 > $t
+  cat /etc/mkinitcpio-syslinux/$1 > /$1
+  cat $t > /etc/mkinitcpio-syslinux/$1
+}
+
+swapall (){
+  swap /etc/mkinitcpio.d/linux.preset
+}
+
+post_install() {
+  swapall
+}
+
+post_upgrade() {
+  swapall
+}
+
+pre_remove() {
+  swapall
+}
