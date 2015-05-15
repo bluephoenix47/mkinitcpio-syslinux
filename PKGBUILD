@@ -17,9 +17,9 @@ sha256sums=('0258e3113a2342c692969d9645b20c537fdc84e189d5707844e8f53c76ecadb4'
 install=mkinitcpio-syslinux.install
 
 package() {
-  mkdir -p "$pkgdir/etc/initcpio/hooks"
+  mkdir -p "$pkgdir/usr/lib/initcpio/install"
   install -D -o root -g root -m 644 \
-    "$srcdir/syslinux" "$pkgdir/etc/initcpio/hooks/"
+    "$srcdir/syslinux" "$pkgdir/usr/lib/initcpio/install/"
 
   mkdir -p "$pkgdir/etc/mkinitcpio.d/"
   install -D -o root -g root -m 644 \
